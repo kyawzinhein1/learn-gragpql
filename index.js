@@ -2,13 +2,11 @@ const express = require("express");
 const { graphqlHTTP } = require("express-graphql");
 const schema = require("./schema");
 const root = require("./resolver");
+
 const dotenv = require("dotenv");
-dotenv.config({
-  path: ".env",
-});
+dotenv.config();
 
 const port = process.env.PORT || 4000;
-
 const { connectDB } = require("./db");
 
 const app = express();
